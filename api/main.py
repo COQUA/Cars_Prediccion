@@ -24,8 +24,6 @@ class CarData(BaseModel):
 def predict(car: CarData):
     car_age = 2025 - car.make_year
 
-    # One-hot encoding manual para fuel_type y transmission (drop_first=True)
-    # Suponiendo que en el entrenamiento usaste: ['car_age', 'mileage_kmpl', 'engine_cc', 'owner_count', 'insurance_valid', 'fuel_type_Diesel', 'fuel_type_Electric', 'transmission_Manual']
     fuel_type_diesel = 1 if car.fuel_type.lower() == "diesel" else 0
     fuel_type_electric = 1 if car.fuel_type.lower() == "electric" else 0
     transmission_manual = 1 if car.transmission.lower() == "manual" else 0
