@@ -3,10 +3,9 @@ from pydantic import BaseModel
 import joblib
 import numpy as np
 
-# Cargar el modelo entrenado
+
 model = joblib.load('../train/used_car_model.pkl')
 
-# Puedes poner el R² Score real aquí (ajústalo según tu entrenamiento)
 MODEL_R2_SCORE = 0.88
 
 app = FastAPI()
