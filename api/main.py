@@ -40,7 +40,7 @@ def predict(car: CarData):
 
     pred = model.predict(X)[0]
 
-    return {"predicted_price_usd": pred}
+    return {"predicted_price_usd": round(pred, 2)}
 
 @app.get("/model_info")
 def model_info():
