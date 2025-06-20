@@ -2,13 +2,21 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
 import numpy as np
-
+from fastapi.middleware.cors import CORSMiddleware
 
 model = joblib.load('../train/used_car_model.pkl')
 
 MODEL_R2_SCORE = 0.88
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials = True,
+    allow_methods = ["*"],
+    allow_headers = ["*"],
+)
 
 class CarData(BaseModel):
     make_year: int
