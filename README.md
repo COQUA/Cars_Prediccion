@@ -10,9 +10,6 @@ Este proyecto utiliza un modelo de regresión lineal para predecir el precio de 
 
 ---
 
-
----
-
 ## Cómo ejecutar el proyecto localmente
 
 ### 1. Clonar el repositorio
